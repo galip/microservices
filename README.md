@@ -10,3 +10,6 @@ product-service port is updated as 0. When we start it Eureka automaticall assig
 
 Shows that this service is available via this port.
 <img width="687" alt="image" src="https://user-images.githubusercontent.com/5994206/236575835-1c44bd38-4bf1-4b2e-b578-fecc32528384.png">
+
+
+![image](https://user-images.githubusercontent.com/5994206/236576812-691cdf29-85bd-45c4-b626-a2b7a5c100b6.png)
