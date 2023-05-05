@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -25,6 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderService {
 
 	private final OrderRepository orderRepository;
+	
+	@Autowired
 	private final WebClient.Builder webClientBuilder;
 
 	public void placeOrder(OrderRequest orderRequest) {
@@ -39,7 +42,7 @@ public class OrderService {
 		List<String> skuCodes = order.getOrderLineItemsList().stream().map(OrderLineItems::getSkuCode).toList();
 
 		InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get()
-				.uri("http://localhost:8082/api/inventory",
+				.uri("http://inventory-service/api/inventory",
 						uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes).build())
 				.retrieve().bodyToMono(InventoryResponse[].class).block();
 
