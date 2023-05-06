@@ -19,9 +19,13 @@ That shows this service is available via this port.
 We can use the following properties to use eureka server like this url: http://localhost:8080/eureka/web
 
 ## Discovery Server Route
+
 spring.cloud.gateway.routes[2].id=discovery-server
+
 spring.cloud.gateway.routes[2].uri=http://localhost:8761
+
 spring.cloud.gateway.routes[2].predicates[0]=Path=/eureka/web
+
 spring.cloud.gateway.routes[2].filters[0]=SetPath=/
 
 We get eureka web page with plain html without static web resources like CSS, javascript.
@@ -30,8 +34,11 @@ We get eureka web page with plain html without static web resources like CSS, ja
 With this properties we get the page with html with static resources.
 
 ## Discovery Server Static Resources Route
+
 spring.cloud.gateway.routes[3].id=discovery-server-static
+
 spring.cloud.gateway.routes[3].uri=http://localhost:8761
+
 spring.cloud.gateway.routes[3].predicates[0]=Path=/eureka/**
 
 ![image](https://user-images.githubusercontent.com/5994206/236643317-a78c0bcf-5913-4ebe-bc64-6659a53b2595.png)
