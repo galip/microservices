@@ -2,6 +2,7 @@
 microservices playground
 
 # Eureka Discovery Server
+
 ![image](https://user-images.githubusercontent.com/5994206/236574939-cac56abf-2c3e-4c47-952c-b5d0b55b0289.png)
 
 # API Gateway
@@ -29,6 +30,7 @@ spring.cloud.gateway.routes[2].predicates[0]=Path=/eureka/web
 spring.cloud.gateway.routes[2].filters[0]=SetPath=/
 
 We get eureka web page with plain html without static web resources like CSS, javascript.
+
 ![image](https://user-images.githubusercontent.com/5994206/236643252-479c2551-d84a-4198-9699-d6d263e5c893.png)
 
 With this properties we get the page with html with static resources.
