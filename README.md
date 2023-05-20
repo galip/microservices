@@ -44,3 +44,9 @@ spring.cloud.gateway.routes[3].uri=http://localhost:8761
 spring.cloud.gateway.routes[3].predicates[0]=Path=/eureka/**
 
 ![image](https://user-images.githubusercontent.com/5994206/236643317-a78c0bcf-5913-4ebe-bc64-6659a53b2595.png)
+
+## Circuit Breaker
+After reaching 5 failed request, circuit breaker state is changed to "HALF_OPEN".
+
+<img width="878" alt="image" src="https://github.com/galip/microservices/assets/5994206/3493eefa-a668-4297-94a8-ca64501af181">
+
